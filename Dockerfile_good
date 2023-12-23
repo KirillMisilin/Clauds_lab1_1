@@ -7,5 +7,6 @@ COPY requirements.txt /first_django
 RUN pip3 install -r requirements.txt --no-cache-dir
 COPY . /first_django
 ENTRYPOINT ["python3"]
+RUN python3 manage.py shell < script.py
 CMD ["manage.py", "runserver", "0.0.0.0:8000"]
 
