@@ -1,0 +1,8 @@
+services:
+  web: 
+    build:
+      context: first_django
+      target: builder
+      dockerfile: Dockerfile_good
+    ports:
+      - '8000:8000'
