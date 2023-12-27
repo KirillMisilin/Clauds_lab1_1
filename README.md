@@ -43,6 +43,20 @@ services:
 ```
       dockerfile: Dockerfile_good  
 ```
+## Volume  
+Создан volume character_data командой  
+```
+docker volume create character_data
+```
+И присоединен к контейнеру web-1 командой  
+```
+docker run --name web-1 -v character_data:/first_django django_test-web
+```
+В результате получился volume, сохраняющий информацию из контейнера, в том числе БД:  
+![Снимок экрана (2619)](https://github.com/KirillMisilin/Clauds_lab1_1/assets/88585791/cbd51f34-7e8a-418d-87cb-a8d40ca95710)  
+![Снимок экрана (2617)](https://github.com/KirillMisilin/Clauds_lab1_1/assets/88585791/27ff9c2c-8b1b-4a05-b7b9-09ce29b0fbad)
+
+
 ## Тестирование  
 Сборка успешна:  
 ![Снимок экрана (2614)](https://github.com/KirillMisilin/Clauds_lab1_1/assets/88585791/7ba1d5ba-99d0-4ca7-8ce9-37f9b45f0230)  
